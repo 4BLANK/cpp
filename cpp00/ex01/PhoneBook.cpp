@@ -63,5 +63,4 @@ void PhoneBook::search()
 	std::cout << "|";
 	print_enough((PhoneBook::contacts)[index].nickname);
 	std::cout << "|\n";
-
 }
