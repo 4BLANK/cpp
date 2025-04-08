@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <string>
+#include <ctype.h>
+#include <stdlib.h>
 
 class Contact
 {
