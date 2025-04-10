@@ -36,11 +36,11 @@ void PhoneBook::add()
 
 	if (index == 8)
 		index = 0;
-	std::cin >> (PhoneBook::contacts)[index].first_name;
-	std::cin >> (PhoneBook::contacts)[index].last_name;
-	std::cin >> (PhoneBook::contacts)[index].nickname;
-	std::cin >> (PhoneBook::contacts)[index].phone_number;
-	std::cin >> (PhoneBook::contacts)[index].darkest_secret;
+  std::getline(std::cin, (PhoneBook::contacts)[index].first_name);
+	std::getline(std::cin, (PhoneBook::contacts)[index].last_name);
+	std::getline(std::cin, (PhoneBook::contacts)[index].nickname);
+	std::getline(std::cin, (PhoneBook::contacts)[index].phone_number);
+	std::getline(std::cin, (PhoneBook::contacts)[index].darkest_secret);
 	if ((PhoneBook::contacts)[index].first_name == ""\
 			|| (PhoneBook::contacts)[index].last_name == "" \
 			|| (PhoneBook::contacts)[index].nickname == "" \
@@ -92,7 +92,7 @@ void PhoneBook::search()
     index++;
   }
   std::cout << "enter the index\n";
-  std::cin >> index_holder;
+  std::getline(std::cin, index_holder);
   if (invalid_char(index_holder))
   {
     std::cout << "invalid input\n";

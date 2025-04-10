@@ -11,7 +11,7 @@ int main (void)
 	while (1)
 	{
 		std::cout << "ADD, SEARCH OR EXIT\n";
-		std::cin >> option;
+    std::getline(std::cin, option);
 		if (option == "ADD")
 			pb.add();
 		else if (option == "SEARCH")

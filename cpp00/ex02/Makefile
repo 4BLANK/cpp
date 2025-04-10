@@ -1,9 +1,9 @@
 CXX= c++
 FLAGS= -Wall -Werror -Wextra -std=c++98
-CFILES= ./Zombie.cpp \
-	./main.cpp
+CFILES= ./tests.cpp \
+	./Account.cpp 
 OFILES= $(CFILES:.cpp=.o)
-NAME= zombie
+NAME= test
 
 all: $(NAME)
 
