@@ -6,6 +6,7 @@
 #include <string>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 class Contact
 {

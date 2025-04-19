@@ -12,6 +12,8 @@ int main (void)
 	{
 		std::cout << "ADD, SEARCH OR EXIT\n";
     std::getline(std::cin, option);
+    if (std::cin.eof() || !strcmp(option.c_str(), "EXIT"))
+      break;
 		if (option == "ADD")
 			pb.add();
 		else if (option == "SEARCH")

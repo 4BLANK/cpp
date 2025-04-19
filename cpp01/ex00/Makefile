@@ -1,7 +1,9 @@
 CXX= c++
 FLAGS= -Wall -Werror -Wextra -std=c++98
 CFILES= ./Zombie.cpp \
-	./main.cpp
+	./main.cpp\
+	./randomChump.cpp\
+	./newZombie.cpp
 OFILES= $(CFILES:.cpp=.o)
 NAME= zombie
 

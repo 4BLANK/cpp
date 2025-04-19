@@ -1,10 +1,11 @@
 CXX= c++
 FLAGS= -Wall -Werror -Wextra -std=c++98
-CFILES= ./Zombie.cpp \
-	./main.cpp\
-	./ZombieHorde.cpp
+CFILES= ./main.cpp\
+				./Weapon.cpp\
+				./HumanB.cpp\
+				./HumanA.cpp
 OFILES= $(CFILES:.cpp=.o)
-NAME= zombie
+NAME= violence
 
 all: $(NAME)
 

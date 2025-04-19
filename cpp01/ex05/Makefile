@@ -1,10 +1,9 @@
 CXX= c++
 FLAGS= -Wall -Werror -Wextra -std=c++98
-CFILES= ./Zombie.cpp \
-	./main.cpp\
-	./ZombieHorde.cpp
+CFILES= ./harl.cpp \
+	./main.cpp
 OFILES= $(CFILES:.cpp=.o)
-NAME= zombie
+NAME= fun
 
 all: $(NAME)
 
