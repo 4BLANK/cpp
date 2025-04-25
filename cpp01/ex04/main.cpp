@@ -23,6 +23,11 @@ int main(int ac, char **av)
   std::string s2 = av[3];
   std::string line;
   std::ifstream ifile(filename.c_str());
+  if (!ifile.is_open())
+  {
+    std::cout << "unable to use file" << std::endl;
+    return 1;
+  }
   std::ofstream ofile((filename + ".replace").c_str());
 
   while (getline(ifile, line))
@@ -30,4 +35,6 @@ int main(int ac, char **av)
     rep(&line, s1, s2);
     ofile << line << std::endl;
   }
+  ifile.close();
+  ofile.close();
 }

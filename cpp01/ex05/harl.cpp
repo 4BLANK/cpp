@@ -1,4 +1,5 @@
 #include "./harl.hpp"
+#include <stdlib.h>
 
 void Harl::debug()
 {
@@ -36,6 +37,8 @@ int get_level(std::string level)
 void Harl::complain(std::string level)
 {
   void (Harl::*exec)() = 0;
+  get_level(level);
+  exit(1);
   switch (get_level(level))
   {
     case DEBUG:
