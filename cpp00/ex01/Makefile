@@ -14,6 +14,9 @@ $(NAME): $(OFILES)
 %.o: %.cpp
 	$(CXX) $(FLAGS) -c $< -o $@
 
+g:
+	$(CXX) $(OFILES) $(FLAGS) -o $(NAME)
+
 clean:
 	rm -rf $(OFILES)
 
