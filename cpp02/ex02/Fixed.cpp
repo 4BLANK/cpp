@@ -14,12 +14,12 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const
 {
-  return (float)(_fixed_point / 256.0);
+  return (float)_fixed_point / (float)(1 << _frac_bits);
 }
 
 int Fixed::toInt() const
 {
-  return (_fixed_point >> 8);
+  return (_fixed_point >> _frac_bits);
 }
 
 Fixed::Fixed()
@@ -37,13 +37,13 @@ Fixed::Fixed(const Fixed& copy)
 Fixed::Fixed(const int n)
 {
   std::cout << "Int constructor called" << std::endl;
-  _fixed_point = n << 8;
+  _fixed_point = n << _frac_bits;
 }
 
 Fixed::Fixed(const float n)
 {
   std::cout << "Float constructor called" << std::endl;
-  _fixed_point = (int)(n * 256.0f);
+  _fixed_point = roundf(n * (1 << _frac_bits));
 }
 
 Fixed& Fixed::operator=(const Fixed& copy)
@@ -119,6 +119,19 @@ Fixed Fixed::operator++(int)
 {
   Fixed tmp = *this;
   this->_fixed_point++;
+  return (tmp);
+}
+
+Fixed& Fixed::operator--()
+{
+  this->_fixed_point--;
+  return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+  Fixed tmp = *this;
+  this->_fixed_point--;
   return (tmp);
 }
 
